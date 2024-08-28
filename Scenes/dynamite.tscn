@@ -9,7 +9,9 @@ size = Vector2(6, 10)
 size = Vector2(3, 15)
 
 [node name="Dynamite" type="AnimatableBody2D"]
+collision_layer = 8
 collision_mask = 4
+sync_to_physics = false
 script = ExtResource("1_57ej0")
 
 [node name="Col" type="CollisionShape2D" parent="."]
@@ -17,6 +19,7 @@ shape = SubResource("RectangleShape2D_6u3o2")
 debug_color = Color(1, 0.00871419, 0.0407754, 0.42)
 
 [node name="ObsDetec" type="Area2D" parent="."]
+collision_layer = 8
 collision_mask = 4
 monitorable = false
 

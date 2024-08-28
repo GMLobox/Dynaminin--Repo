@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var S_RENAL := $Renald
 @onready var S_CART := $Cart
 
+const dyna_scene := preload("res://Scenes/dynamite.tscn")
+var dyna = null
 
 const BASE_SPEED := 200.0
 const JUMP_VELOCITY := -400.0
@@ -27,9 +29,13 @@ func _physics_process(delta):
 		velocity.y = 0
 	if Input.is_action_just_pressed("Jump") && GROUNDED:
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("Dynamite") && dyna == null:
+		dyna = dyna_scene.instantiate()
+		add_child(dyna)
 
 	if is_on_wall():
-		queue_free()
+		queue_free() #PLACEHOLDER!!1
+	
 	
 	var direction := Input.get_axis("Slow", "Fast")
 	if direction:
@@ -39,3 +45,8 @@ func _physics_process(delta):
 	$Label.text = String.num(velocity.x, 2)
 
 	move_and_slide()
+
+
+func _child_leave_milk(node):
+	if node.name == "Dynamite":
+		dyna = null

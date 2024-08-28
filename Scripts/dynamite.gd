@@ -1,7 +1,7 @@
 extends AnimatableBody2D
 
-var VSPD = -400
-const HSPD = 600
+var VSPD = -300
+const HSPD = 200
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +21,4 @@ func _body_hit(body):
 		Global.SCORE += 1000
 		#add explosion scene here
 		queue_free()
+
