@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkct2g3aanjow"]
+
+[ext_resource type="Script" path="res://Scripts/dynamite.gd" id="1_57ej0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3o2"]
+size = Vector2(6, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42irj"]
+size = Vector2(3, 15)
+
+[node name="Dynamite" type="AnimatableBody2D"]
+collision_mask = 4
+script = ExtResource("1_57ej0")
+
+[node name="Col" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6u3o2")
+debug_color = Color(1, 0.00871419, 0.0407754, 0.42)
+
+[node name="ObsDetec" type="Area2D" parent="."]
+collision_mask = 4
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="ObsDetec"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_42irj")
+debug_color = Color(0.444718, 0.452345, 1, 0.42)
+
+[node name="VisScreen" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="ObsDetec" to="." method="_body_hit"]
+[connection signal="screen_exited" from="VisScreen" to="." method="_screen_exit"]
