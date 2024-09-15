@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d02jwc7j80bhs"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_d2obu"]
+[ext_resource type="FontFile" uid="uid://flqoqwyhtnms" path="res://Resources/ARCADE_N.TTF" id="2_ljigf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dsaf1"]
+font = ExtResource("2_ljigf")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_d2obu")
+
+[node name="SCORE" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+text = "00000"
+label_settings = SubResource("LabelSettings_dsaf1")
+horizontal_alignment = 1
+
+[node name="REST" type="Label" parent="."]
+offset_right = 79.0
+offset_bottom = 23.0
+scale = Vector2(0.75, 0.75)
+text = "1UP 00"
+label_settings = SubResource("LabelSettings_dsaf1")
+horizontal_alignment = 1

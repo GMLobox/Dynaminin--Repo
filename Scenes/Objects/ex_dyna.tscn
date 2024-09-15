@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxl46n1wsynat"]
+
+[ext_resource type="Texture2D" uid="uid://bir13o8djts4v" path="res://Graphics/Obstacles/explode-Sheet.png" id="1_15y1y"]
+[ext_resource type="Script" path="res://Scripts/Ex_DYNA.gd" id="2_8qa8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd0d6"]
+atlas = ExtResource("1_15y1y")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xhrb"]
+atlas = ExtResource("1_15y1y")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msom2"]
+atlas = ExtResource("1_15y1y")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt7xe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd0d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msom2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd0d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Ex_DYNA" type="AnimatedSprite2D"]
+top_level = true
+sprite_frames = SubResource("SpriteFrames_tt7xe")
+autoplay = "default"
+script = ExtResource("2_8qa8j")

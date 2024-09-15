@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cek1nbrmgu6wd"]
+
+[ext_resource type="FontFile" uid="uid://flqoqwyhtnms" path="res://Resources/ARCADE_N.TTF" id="1_1jcxw"]
+
+[resource]
+font = ExtResource("1_1jcxw")
+font_color = Color(1, 0, 0, 1)

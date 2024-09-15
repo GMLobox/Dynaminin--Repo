@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkct2g3aanjow"]
+[gd_scene load_steps=5 format=3 uid="uid://bkct2g3aanjow"]
 
-[ext_resource type="Script" path="res://Scripts/dynamite.gd" id="1_57ej0"]
+[ext_resource type="Script" path="res://Scripts/dynamite.gd" id="1_nkpef"]
+[ext_resource type="Texture2D" uid="uid://b3kwxsoe3wwvp" path="res://Graphics/Player/dynamite.png" id="2_ckdn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3o2"]
 size = Vector2(6, 10)
@@ -12,7 +13,7 @@ size = Vector2(3, 15)
 collision_layer = 8
 collision_mask = 4
 sync_to_physics = false
-script = ExtResource("1_57ej0")
+script = ExtResource("1_nkpef")
 
 [node name="Col" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6u3o2")
@@ -21,7 +22,6 @@ debug_color = Color(1, 0.00871419, 0.0407754, 0.42)
 [node name="ObsDetec" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 4
-monitorable = false
 
 [node name="Col" type="CollisionShape2D" parent="ObsDetec"]
 position = Vector2(3, 0)
@@ -29,6 +29,12 @@ shape = SubResource("RectangleShape2D_42irj")
 debug_color = Color(0.444718, 0.452345, 1, 0.42)
 
 [node name="VisScreen" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Dynamite" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 0.261799
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ckdn3")
 
 [connection signal="body_entered" from="ObsDetec" to="." method="_body_hit"]
 [connection signal="screen_exited" from="VisScreen" to="." method="_screen_exit"]

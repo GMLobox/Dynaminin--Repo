@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wudq3u3ciqhv"
-path="res://.godot/imported/renald.png-38583970180f3796376f9ca059be5028.ctex"
+uid="uid://bir13o8djts4v"
+path="res://.godot/imported/explode-Sheet.png-399f49227008d89bc65d43d70c8f12e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/renald.png"
-dest_files=["res://.godot/imported/renald.png-38583970180f3796376f9ca059be5028.ctex"]
+source_file="res://Graphics/Obstacles/explode-Sheet.png"
+dest_files=["res://.godot/imported/explode-Sheet.png-399f49227008d89bc65d43d70c8f12e2.ctex"]
 
 [params]
 

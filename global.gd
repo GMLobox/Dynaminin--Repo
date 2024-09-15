@@ -1,6 +1,7 @@
 extends Node
 
 var SCORE : int = 0
+var HEALTH : int = 3
 var c_scene = null
 
 ## SCENE STUFFS!!
@@ -14,9 +15,10 @@ func switch_scene(packed_scene) -> void:
 
 
 func add_scene(scene : String):
-	var root := get_tree().root
-	var _scene = load(scene).instantiate
+	var root = get_tree().root
+	var _scene = load(scene).instantiate()
 	root.add_child(_scene)
+	return _scene
 
 
 func _df_switch_scene(packed_scene) -> void:

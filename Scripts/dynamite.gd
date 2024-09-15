@@ -1,6 +1,6 @@
 extends AnimatableBody2D
 
-var VSPD = -300
+var VSPD = -250
 const HSPD = 200
 
 
@@ -10,6 +10,9 @@ func _process(delta) -> void:
 	position.y += delta * VSPD
 	
 	VSPD += delta * 980
+	if VSPD < -40 && Input.is_action_just_released("Dynamite"):
+		print(VSPD)
+		VSPD = 0
 
 func _screen_exit():
 	queue_free()
@@ -20,5 +23,7 @@ func _body_hit(body):
 		body.queue_free()
 		Global.SCORE += 1000
 		#add explosion scene here
+		var exp = Global.add_scene("res://Scenes/Objects/ex_dyna.tscn")
+		exp.position = position + get_parent().position
 		queue_free()
 
